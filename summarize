@@ -1,0 +1,44 @@
+总结
+
+一、学习小结
+    1)aiohttp + aiomysql +jinja2 + vue
+    2)js/css/html 相关的知识简单的学习了一下
+    3）数据库知识相对比较薄弱。在异步orm中，不是理解的很透彻，例如 在异步orm中
+        表与表之间的关联。在异步orm中，如何去优化数据查询等。
+    4）回调函数相关的知识， 希望老师有时间能够着重详细的讲解一下。
+    5）装饰器
+    6) AOP与OOP的相关知识。
+
+    python基础知识
+    类
+    捕捉异常
+    socket网络通信
+    cgi、wsgi
+    线程、进程
+    异步编程
+    协程
+    生成器
+    协程
+    文件对象的读写操作
+    mysql基本操作
+    orm
+
+二、项目展示
+
+
+三、项目中遇见的一些问题
+    1）数据库表的字符集问题，影响数据的保存。alter table tablename convert to character set utf8;
+    2) 用vue框架的时候 input和textarea标签 用v-model绑定时候的差异
+    3）成员登录和管理员登录
+
+四、readme
+    基于web的微型学生信息管理系统
+    运行环境： python3.6.3
+    系统：ubuntu-17.04
+    编译器：pycharm2017.2.4
+    技术选型： python + mysql + aiohttp + aiomysql + vue + jinja2 + js + css
+    实现的功能：成员授权/成员登录/信息录入/信息查询/修改密码
+    入口：aiohttp_server.py
+
+    特点：整个项目异步实现
+

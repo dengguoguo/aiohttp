@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>录入信息页面</title>
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/uikit.min.css">
+    <link rel="stylesheet" href="../static/css/uikit.gradient.min.css">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/cloud.js"></script>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/sha1.min.js"></script>
+    <script src="../static/js/uikit.min.js"></script>
+    <script src="../static/js/vue.min.js"></script>
+    <script src="../static/js/awesome.js"></script>
+
+    <script type="text/javascript">
+$(function() {
+    var vmAuth = new Vue({
+        el: '#vm',
+        data: {
+            name: '',
+            age: '',
+            <!--gender: '',-->
+            athnic: '',
+            idcard: '',
+            admission_time: '',
+            native_place: '',
+            address: '',
+            email: '',
+            phonenumber: ''
+        },
+        methods: {
+            submit: function(event) {
+                event.preventDefault();
+                var
+                    $form = $('#vm'),
+                    <!--user = this.user.trim().toLowerCase(),-->
+                    data = {
+                        name: this.name,
+                        age: this.age,
+                        athnic: this.athnic,
+                        idcard: this.idcard,
+                        admission_time: this.admission_time,
+                        native_place: this.native_place,
+                        address: this.address,
+                        email: this.email,
+                        phonenumber: this.phonenumber
+                    };
+                $form.postJSON('/entry_infomations', data, function(err, result) {
+                    if (! err) {
+                        location.assign('/success.html');
+                    }
+                });
+            }
+        }
+    });
+});
+
+
+
+    </script>
+</head>
+
+<body>
+
+<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+        <li><a href="member_main.html">首页</a></li>
+        <li><a href="#">录入和修改个人信息</a></li>
+    </ul>
+</div>
+
+<div class="formbody">
+
+    <div class="formtitle"><span>基本信息</span></div>
+
+    <form id="vm" v-on="submit: submit">
+        <ul class="forminfo">
+            <li><label>姓名</label><input v-model='name' name="name" type="text" class="dfinput"/></li>
+            <li><label>年龄</label><input v-model='age' name="age" type="text" class="dfinput"/></li>
+            <li><label>身份证号码</label><input v-model='idcard' name="idcard" type="text" class="dfinput"/></li>
+            <li><label>民族</label><input v-model='athnic' name="athnic" type="text" class="dfinput" value=""/></li>
+            <li><label>入学时间</label><input v-model='admission_time' name="admission_time" type="text" class="dfinput"/>
+            </li>
+            <li><label>籍贯</label><input v-model='native_place' name="native_place" type="text" class="dfinput"/></li>
+            <li><label>家庭住址</label><input v-model='address' name="address" type="text" class="dfinput"/></li>
+            <li><label>电子邮箱</label><input v-model='email' name="email" type="text" class="dfinput"/></li>
+            <li><label>联系电话</label><input v-model='phonenumber' name="phonenumber" type="text" class="dfinput"/></li>
+            <li><label>&nbsp</label><input name="" type="submit" class="btn" value="确认提交"/></li>
+        </ul>
+    </form>
+</div>
+</body>
+</html>

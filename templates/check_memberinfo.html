@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for user in users %}
+<table>
+    <thead>个人信息页面</thead>
+    <tbody>
+    <ul>
+        <li><p>用户名：17082601</p></li>
+        <li><p>姓名： {{user.name}}</p></li>
+        <li><p>年龄： {{user.age}}</p></li>
+        <li><p>身份证号码： {{user.idcard}}</p></li>
+        <li><p>民族: {{user.athnic}}</p></li>
+        <li><p>入学时间： {{user.admission_time}}</p></li>
+        <li><p>祖籍： {{user.native_place}}</p></li>
+        <li><p>住址： {{user.address}}</p></li>
+        <li><p>邮箱： {{user.email}}</p></li>
+        <li><p>电话： {{user.phonenumber}}</p></li>
+    </ul>
+    </tbody>
+</table>
+{% endfor %}
+</body>
+</html>
